@@ -1,0 +1,34 @@
+name: MCATPrep
+options:
+  bundleIdPrefix: com.mcatprep
+  deploymentTarget:
+    iOS: 17.0
+  xcodeVersion: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: 5.9
+targets:
+  MCATPrep:
+    type: application
+    platform: iOS
+    sources:
+      - App
+    settings:
+      base:
+        INFOPLIST_FILE: App/SupportingFiles/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.mcatprep.app
+        TARGETED_DEVICE_FAMILY: 1,2 # iPhone and iPad
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+    info:
+      path: App/SupportingFiles/Info.plist
+      properties:
+        CFBundleDisplayName: MCATPrep
+        LSRequiresIPhoneOS: true
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIRequiredDeviceCapabilities:
+          - armv7
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait 

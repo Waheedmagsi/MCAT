@@ -1,0 +1,38 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run tests"
+  lane :tests do
+    run_tests(
+      project: "MCATPrep.xcodeproj",
+      devices: ["iPhone 13"],
+      scheme: "MCATPrep"
+    )
+  end
+
+  desc "Build and upload to TestFlight"
+  lane :beta do
+    ensure_git_status_clean
+    increment_build_number
+    build_app(
+      project: "MCATPrep.xcodeproj",
+      scheme: "MCATPrep"
+    )
+    upload_to_testflight
+  end
+
+  desc "Deploy to App Store"
+  lane :release do
+    ensure_git_status_clean
+    increment_build_number
+    build_app(
+      project: "MCATPrep.xcodeproj",
+      scheme: "MCATPrep"
+    )
+    upload_to_app_store(
+      submit_for_review: true,
+      automatic_release: true,
+      force: true
+    )
+  end
+end 

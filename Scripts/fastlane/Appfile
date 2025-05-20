@@ -1,0 +1,8 @@
+app_identifier("com.mcatprep.app") # The bundle identifier of your app
+apple_id("developer@mcatprep.com") # Your Apple Developer Portal username
+
+itc_team_id("123456789") # App Store Connect Team ID
+team_id("ABC1234DEF") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+# https://docs.fastlane.tools/advanced/#appfile 
