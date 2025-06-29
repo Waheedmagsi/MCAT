@@ -1,4 +1,12 @@
 import SwiftUI
+import AVKit
+import PDFKit
+import Foundation
+import Combine
+// Import shared models and views
+import App.Modules.Decks.StudyMaterial
+import App.Modules.Decks.ProgressManager
+import App.Modules.Decks.TopicDetailView
 
 struct DeckListView: View {
     @ObservedObject var viewModel: DeckListViewModel
